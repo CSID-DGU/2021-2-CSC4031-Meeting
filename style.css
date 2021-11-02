@@ -1,0 +1,46 @@
+.gr{
+  display: grid;
+  grid-template-columns: auto auto;
+  /* grid-column-gap: 2%; */
+  /*퍼센트 안되면 px로 수정*/
+  padding: 10px;
+  align-items: center;
+  grid-column-gap: 20px;
+  width: 100%;
+}
+
+.leftgr{
+  /*background-color: #2196F3;*/
+  width: 95%;
+  margin: 0 auto;
+}
+
+.rightgr{
+  /*background-color: #1133F1;*/
+  width: 95%;
+  margin: 0 auto;
+}
+
+.print{
+	text-align: center;
+}
+
+
+.maintxt{
+	color: #ffffff;
+	text-align: center;
+	text-size-adjust: 5%;
+	text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+}
+
+.thick{
+	overflow: auto;
+}
+
+.thdiv{
+	padding: 6px;
+	border: 1px solid;
+	/* border-color: gray; */
+	border-radius: 20px;
+	height: 565px;overflow-x:hidden; overflow-y:scroll;
+}

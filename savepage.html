@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+
+<!--pdf저장 js-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#btnPrintleft").live("click", function () {
+            var divContents = $("#lecturescript").html();
+            var printWindow = window.open('', '', 'height=500,width=800');
+            printWindow.document.write('<html><head><title>DIV Contents</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#btnPrintright").live("click", function () {
+            var divContents = $("#lecturesummary").html();
+            var printWindow = window.open('', '', 'height=500,width=800');
+            printWindow.document.write('<html><head><title>DIV Contents</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
+
+
+<title>Summary Note</title>
+</head>
+
+<body>
+	<div class="gr">
+	 <!--왼쪽스크립트-->
+	 
+	  <div class="leftgr">
+	  <b><h2 class="maintxt">:: SCRIPT ::</h2></b>
+	  
+	  <!--좌측 내용-->
+	  <form id="form1">
+	  <div class="thdiv">
+		  <div class="thick" id="lecturescript">
+			<h1> 자막 들어갈 곳</h1>
+		  </div>
+	  </div>
+
+				<input type="button" value="SAVE" id="btnPrintleft" />
+
+      </form>
+	  </div>
+
+	  
+	 <!--오른쪽 요약--> 
+	 <div class="rightgr">
+	  <b><h2 class="maintxt">:: SUMMARY ::</h2></b>
+	  <!--우측 내용-->
+	  	<form id="form1">
+		<div class="thdiv">
+		  <div class="thick" id="lecturesummary">
+			<h1>요약 들어갈 곳</h1>
+		  </div>
+		</div>
+				<input type="button" value="SAVE" id="btnPrintright" />
+
+		</form>
+	 </div>
+	</div>
+	
+	
+	
+	<!--자바스크립트 호출-->
+	<script type="text/javascript" src="./second.js"></script>
+	
+</body>
+</html>
