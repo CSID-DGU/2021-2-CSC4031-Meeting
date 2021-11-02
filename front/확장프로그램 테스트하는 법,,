@@ -1,0 +1,11 @@
+크롬 브라우저에서 chrome://flags 주소로 이동
+chrome labs검색 후 Enabled설정
+
+크롬 재실행 후
+도구더보기 - 확장프로그램
+
+우측상단 개발자모드 활성화 후
+압축해제된 확장 프로그램을 로드합니다. 클릭
+html파일 다운 후 압축해제한 html폴더 등록
+
+하단에 Chrome앱에 Summary Note추가 된 것 확인
