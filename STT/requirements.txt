@@ -1,0 +1,18 @@
+# [packages]
+fastapi
+uvicorn
+python-multipart
+hypercorn
+pydantic
+
+# [dev-packages]
+# pylint
+# black
+# mypy
+# isort
+# pytest
+# requests
+
+pyaudio
+wave
+numpy
