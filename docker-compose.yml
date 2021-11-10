@@ -1,0 +1,57 @@
+version: "3.0"
+
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    ports:
+      - 3000:3000
+    environment: 
+      - NODE_ENV=production
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    tty: true
+    depends_on: 
+      - STT
+    networks:
+      - meeting
+  
+  STT:
+    container_name: api_server
+    build:
+      context: .
+      dockerfile: ./STT/Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - ./STT:/usr/src/app
+    networks:
+      - meeting
+    restart: always
+
+  nginx:
+    container_name: nginx
+    build: 
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    ports:
+      - 80:80
+      - 433:433
+    volumes:
+      - ./frontend/build:/usr/share/nginx/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    depends_on:
+      - STT
+      - web
+    networks:
+      - meeting
+    restart: on-failure
+
+
+networks: 
+  meeting:
+    driver: bridge
