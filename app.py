@@ -39,10 +39,11 @@ app.add_middleware(
     allow_headers = ["*"],
 )
 
-summarization = ['자 지도 한번 보실께요 자 중국이 있고 우리나라가 있고 이렇게 일본이 펼쳐집니다.', '자 이런 상황에서 일본이 드디어 우리나라를 침공을 한 겁니다', '이제 중국도 쳐들어 가려고 했던 거죠 그런데 세상에 우리 선조가 상상도 하지 못한 업적을 남기시죠']
 
 
 @app.get("/summary", status_code=200, response_description="summary successfully retrived")
 def get_summary():
-    return summarization
+    return {1: "자 지도 한번 보실께요 자 중국이 있고 우리나라가 있고 이렇게 일본이 펼쳐집니다.", 
+    2: "자 이런 상황에서 일본이 드디어 우리나라를 침공을 한 겁니다", 
+    3: "이제 중국도 쳐들어 가려고 했던 거죠 그런데 세상에 우리 선조가 상상도 하지 못한 업적을 남기시죠"}
 
