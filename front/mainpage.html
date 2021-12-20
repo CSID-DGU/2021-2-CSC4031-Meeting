@@ -1,0 +1,49 @@
+
+<html>
+<head>
+	<link rel="stylesheet" href="fstyle.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Security-Policy" content="default-src *;">
+	
+	
+	<header class="masthead d-flex align-items-center">
+		<div class="container px-4 px-lg-5 text-center">
+            <h1 class="mb-1">SUMMARY NOTE</h1>
+            <h3 class="mb-5"><em>TEAM 회의중</em></h3>
+            <a class="btn btn-primary btn-xl" id="nextpage">서비스 시작하기</a>
+        </div>
+    </header>
+
+</head>
+
+<body>
+	
+	
+	<hr>
+	
+    <div class="row input-group-newsletter">
+        <div class="col"><input class="form-control" id="keyword" name="keyword" placeholder="설정할 키워드를 입력하세요!" aria-label="설정할 키워드를 입력하세요!" /></div>
+        <div class="col-auto"><input type="button" class="btn btn-primary" id="send" value="설정"></div>
+    </div>
+	
+	
+	<div id="setkeyword">
+		<span class="small">설정한 키워드:</span>
+		<span class="small" id="set"></span>
+	</div>
+	
+
+
+	<!-- 자바스크립트 호출-->
+	<script type="text/javascript" src="./first.js"></script>
+
+</body>
+
+
+</html>
+
+	
+	<!--새탭에서 띄우려면
+	"chrome_url_overrides": {
+    "newtab": "first.html"
+	} -->
